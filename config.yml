@@ -1,0 +1,20 @@
+ruby_version: 2.3.0
+ruby_gemset: TMP12321
+
+gems:
+  rspec-rails:
+    factory_girl_rails: ~> 4.8
+  acts_as_api: true
+  paperclip:
+    version: ~> 5.0.0
+  activeadmin:
+    version: ~> 1.0.0.pre4
+    devise:
+      version: ~> 3.5
+  swagger: true
+  redis: true
+  exception_notification: true
+  sidekiq:
+    version: ~> 4.2
+    sidekiq-statistic: true
+    sidekiq-cron: true

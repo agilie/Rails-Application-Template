@@ -1,0 +1,17 @@
+require 'json'
+
+def init_redis_connect
+  redis_uri = URI.parse(ENV['REDIS_URL'] || 'redis://127.0.0.1:6379')
+  $redis = Redis::Namespace.new('<%= GEM_SET %>', redis: Redis.new(host: redis_uri.host, port: redis_uri.port))
+end
+
+init_redis_connect
+
+if defined?(PhusionPassenger)
+  PhusionPassenger.on_event(:starting_worker_process) do |forked|
+    if forked
+      $redis.client.disconnect unless $redis.blank?
+      init_redis_connect
+    end
+  end
+end

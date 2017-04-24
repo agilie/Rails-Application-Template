@@ -1,0 +1,4 @@
+#Worker:
+#  cron: "0 0 * * *"
+#  class: "WorkerClass"
+#  queue: default
