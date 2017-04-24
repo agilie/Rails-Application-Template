@@ -1,5 +1,5 @@
 ruby_version: 2.3.0
-ruby_gemset: TMP12321
+ruby_gemset: MYAPP
 
 gems:
   rspec-rails:
