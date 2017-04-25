@@ -1,20 +1,49 @@
-ruby_version: 2.3.0
-ruby_gemset: MYAPP
+rvm: true
 
-gems:
-  rspec-rails:
-    factory_girl_rails: ~> 4.8
-  acts_as_api: true
-  paperclip:
-    version: ~> 5.0.0
-  activeadmin:
-    version: ~> 1.0.0.pre4
+serializer:
+  gems:
+    acts_as_api: true
+
+paperclip:
+  gems:
+    paperclip:
+      version: ~> 5.0.0
+
+testing:
+  gems:
+    rspec-rails:
+      group: test, development
+    factory_girl_rails:
+      version: ~> 4.8
+      group: test, development
+    simplecov:
+      group: test
+      require: false
+
+admin_panel:
+  gems:
     devise:
       version: ~> 3.5
-  swagger: true
-  redis: true
-  exception_notification: true
-  sidekiq:
-    version: ~> 4.2
+    activeadmin:
+      version: ~> 1.0.0.pre4
+
+documentation:
+  gems:
+    swagger-docs: true
+    swagger_engine: true
+
+redis:
+  gems:
+    redis: ~>3.2
+    redis-namespace: ~> 1.5.2
+
+notifications:
+  gems:
+    exception_notification: true
+
+sidekiq:
+  gems:
+    sidekiq:
+      version: ~> 4.2
     sidekiq-statistic: true
     sidekiq-cron: true

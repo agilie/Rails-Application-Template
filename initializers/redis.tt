@@ -2,7 +2,7 @@ require 'json'
 
 def init_redis_connect
   redis_uri = URI.parse(ENV['REDIS_URL'] || 'redis://127.0.0.1:6379')
-  $redis = Redis::Namespace.new('<%= GEM_SET %>', redis: Redis.new(host: redis_uri.host, port: redis_uri.port))
+  $redis = Redis::Namespace.new('<%= app_name %>', redis: Redis.new(host: redis_uri.host, port: redis_uri.port))
 end
 
 init_redis_connect

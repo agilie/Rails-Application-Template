@@ -3,46 +3,50 @@ Base template for creating Ruby-on-Rails applications
 
 ## How to use
 1. Download or clone the template
-2. Simply use the template when you are creating your application
+2. Set your ruby version and gemset
+    ```bash
+    $ rvm use 2.3.0@myapp --create
     ```
-    rails new myapp -m /path/to/template/the_bat.rb
+3. Simply use the template when you are creating your application
     ```
-3. Have fun with your application
+    rails new myapp -m /path/to/template/bootstrap.rb
+    ```
+4. Have fun with your application
 
 ## Customization
 Template uses `config.yml` file for installing and configuring rails gems and other stuff. 
 Here are the main customizable features:
 
-1. `ruby_version` - the ruby version used for the project. Will take the current if not 
-specified
-2. `ruby_gemset` - ruby gemset name. Will use project name if not specified
-3. gems block - list of gems that can be installed to the application. The minimum 
-requirement for the gem to be installed is `gem_name: true`. i.e.
+1. Each block runs his own runner from runners folder. The runner will be executed if it has
+   `true` value or a hash assigned, i.e.
     ```yaml
-    gems:
-      acts_as_api: true
+    rvm: true
     ```
-    If you want to specify the gem version you can do that as follows
     ```yaml
-    gems:
-      acts_as_api:
-        version: ~> 5.0.0
+    serializer:
+      gems:
+        acts_as_api: true
     ```
-4. Some gems are installed together with dependencies, i.e.
+2. Each block may contain a list of gems to be installed. They are put in a `gems` block, i.e.
    ```yaml
-     sidekiq:
-       version: ~> 4.2
-       sidekiq-statistic: true
-       sidekiq-cron: true
+    testing:
+      gems:
+        faker: true
+        rspec-rails:
+          group: test, development
+        factory_girl_rails:
+          version: ~> 4.8
+          group: test, development
    ```
-   Just comment out one that you don't need
-      ```yaml
-        sidekiq:
-          version: ~> 4.2
-          sidekiq-statistic: true
-          # sidekiq-cron: true
-      ```
-
+   You can use just `true` value for a gem. In this case the gem will be added to `Gemfile` like
+   ```ruby
+   gem 'faker'
+   ```
+   You can also pass version and/or group params and they will be used in `Gemfile` either
+   ```ruby
+   gem 'factory_girl_rails', '~> 4.8', group: [:test, :development]
+   ```
+   
 ## Troubleshooting
 Problems? Check the [Issues](https://github.com/agilie/Rails-Application-Template/issues) block 
 to find the solution or create an new issue that we will fix asap. Feel free to contribute.

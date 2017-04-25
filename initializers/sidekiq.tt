@@ -2,7 +2,7 @@ require 'sidekiq'
 require 'sidekiq/web'
 
 Sidekiq::Web.use(Rack::Auth::Basic) do |user, password|
-    [user, password] == ['admin', ENV['<%= "#{GEM_SET}_SIDEKIQ_PASSWORD" %>'] || 'qqqqqqqq']
+    [user, password] == ['admin', ENV['<%= "#{app_name}_SIDEKIQ_PASSWORD" %>'] || 'qqqqqqqq']
 end
 
 Sidekiq.configure_server do |config|
@@ -10,10 +10,10 @@ Sidekiq.configure_server do |config|
 end
 
 Sidekiq.configure_server do |config|
-  config.redis = { url: ENV['REDIS_URL'] || 'redis://127.0.0.1:6379', namespace: '<%= GEM_SET %>' }
+  config.redis = { url: ENV['REDIS_URL'] || 'redis://127.0.0.1:6379', namespace: '<%= app_name %>' }
 end
 
 Sidekiq.configure_client do |config|
-  config.redis = { url: ENV['REDIS_URL'] || 'redis://127.0.0.1:6379', namespace: '<%= GEM_SET %>' }
+  config.redis = { url: ENV['REDIS_URL'] || 'redis://127.0.0.1:6379', namespace: '<%= app_name %>' }
 end
 

@@ -1,0 +1,10 @@
+SwaggerEngine.configure do |config|
+  config.admin_username = 'admin'
+  config.admin_password = <%= "ENV['#{app_name}_API_DOCS_PASSWORD'] || 'qqqqqqqq'" %>
+
+  config.json_files = {
+    v1: 'public/apidocs/api-docs.json'
+  }
+end
+
+Rails.application.config.assets.precompile += %w(swagger_engine/reset.css swagger_engine/print.css)
