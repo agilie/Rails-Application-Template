@@ -18,7 +18,7 @@ testing:
       group: test, development
     simplecov:
       group: test
-      require: false
+      require: true
 
 admin_panel:
   gems:
