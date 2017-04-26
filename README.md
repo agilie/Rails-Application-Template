@@ -15,19 +15,18 @@ Base template for creating Ruby-on-Rails applications
 
 ## Customization
 Template uses `config.yml` file for installing and configuring rails gems and other stuff. 
-Here are the main customizable features:
-
-1. Each block runs his own runner from runners folder. The runner will be executed if it has
-   `true` value or a hash assigned, i.e.
-    ```yaml
-    rvm: true
-    ```
-    ```yaml
-    serializer:
-      gems:
-        acts_as_api: true
-    ```
-2. Each block may contain a list of gems to be installed. They are put in a `gems` block, i.e.
+The list of statements that will help you to customize your own template are given below.
+1. The configuration file consists of several blocks like. They divide the application generation
+   process into some logic parts.
+   ```yaml
+   rvm: ...
+   testing: ...
+   documentation: ...
+   deploy: ...
+   ```
+2. The main part of each block is `gems`. So if you want more gems to be added to your project just
+   add a new block with any name, which suits your aim with appropriate `gems` block or add your `gems` to 
+   any existing block.  
    ```yaml
     testing:
       gems:
@@ -46,7 +45,39 @@ Here are the main customizable features:
    ```ruby
    gem 'factory_girl_rails', '~> 4.8', group: [:test, :development]
    ```
+3. Each block can run his own runner from runners folder if one exists. There you can put any
+   code you want to execute, i.e.
+   ```ruby
+   create_file '.ruby-version', RUBY_VERSION
+   create_file '.ruby-gemset', app_name
+   file '.rvmrc', "rvm use #{RUBY_VERSION}@#{app_name}"
+   ```
+4. If you need to make some actions after gem is added, i.e. run `rails generate rspec:install` you can put
+   callback to the runner that will be executed after gem is added. By convention callback name depends on
+   gem name and should look like this
+   ```ruby
+   "#{your_gem_name.gsub('-', '_')}_callback"
+   ```
+   So, for rspec-rails the full configuration will look like that
+   ```yaml
+   # config.yml
+   testing:
+     gems:
+       rspec-rails:
+         group: test, development
+   ```
+   ```ruby
+   # runners/testing.rb
+   def rspec_rails_callback
+     generate('rspec:install')
+   end
+   ```
    
+## TODOs
+1. Add gitignore with appropriate file exclusions
+2. Implement a convenient way for user logins and passwords injecting to initializers
+3. Add more configurations to capistrano
+
 ## Troubleshooting
 Problems? Check the [Issues](https://github.com/agilie/Rails-Application-Template/issues) block 
 to find the solution or create an new issue that we will fix asap. Feel free to contribute.
