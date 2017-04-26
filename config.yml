@@ -47,3 +47,15 @@ sidekiq:
       version: ~> 4.2
     sidekiq-statistic: true
     sidekiq-cron: true
+
+deploy:
+  gems:
+    capistrano:
+      version: ~> 3.6
+      group: development
+    capistrano-rails:
+      group: development
+    capistrano-bundler:
+      group: development
+    capistrano-rvm:
+      group: development

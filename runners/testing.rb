@@ -8,6 +8,7 @@ def factory_girl_rails_callback
     <<-RUBY
 
 require 'support/factory_girl'
+
     RUBY
   end
 end
@@ -15,8 +16,10 @@ end
 def simplecov_callback
   inject_into_file 'spec/spec_helper.rb', before: 'RSpec.configure' do
     <<-RUBY
+
 require 'simplecov'
 SimpleCov.start
+
     RUBY
   end
 end
