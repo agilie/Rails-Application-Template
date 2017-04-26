@@ -12,5 +12,3 @@ def exception_notification_callback
 
   environment "config.action_mailer.smtp_settings = #{smtp_config}", env: 'production'
 end
-
-set_gems_from_runner File.basename(__FILE__, '.*')

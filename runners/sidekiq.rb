@@ -7,5 +7,3 @@ def sidekiq_cron_callback
   template "#{TEMPLATE_PATH}/initializers/sidekiq_cron.tt", 'config/initializers/sidekiq_cron.rb'
   template "#{TEMPLATE_PATH}/ymls/schedule.yml", 'config/schedule.yml'
 end
-
-set_gems_from_runner File.basename(__FILE__, '.*')
