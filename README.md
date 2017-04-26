@@ -1,6 +1,8 @@
 # Rails-Application-Template
 Base template for creating Ruby-on-Rails applications
 
+**Current version:** *0.1.1*
+
 ## How to use
 1. Download or clone the template
 2. Set your ruby version and gemset
