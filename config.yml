@@ -1,4 +1,5 @@
 rvm: true
+git: true
 
 serializer:
   gems:
