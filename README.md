@@ -1,7 +1,7 @@
 # Rails-Application-Template
 Base template for creating Ruby-on-Rails applications
 
-**Current version:** *0.1.1*
+**Current version:** *0.1.2*
 
 ## How to use
 1. Download or clone the template
@@ -81,7 +81,7 @@ The list of statements that will help you to customize your own template are giv
 3. Add more configurations to capistrano
 
 ## Troubleshooting
-Problems? Check the [Issues](#issues) block 
+Problems? Check the [Issues](/issues) block 
 to find the solution or create an new issue that we will fix asap. Feel free to contribute.
 
 ## License
