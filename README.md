@@ -81,7 +81,7 @@ The list of statements that will help you to customize your own template are giv
 3. Add more configurations to capistrano
 
 ## Troubleshooting
-Problems? Check the [Issues](/issues) block 
+Problems? Check the [Issues](issues) block 
 to find the solution or create an new issue that we will fix asap. Feel free to contribute.
 
 ## License
