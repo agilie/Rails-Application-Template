@@ -9,9 +9,13 @@ Base template for creating Ruby-on-Rails applications
     ```bash
     $ rvm use 2.3.0@myapp --create
     ```
-3. Simply use the template when you are creating your application
+3. Install rails gem for the gemset
+    ```bash
+    $ gem install rails -v 'your_rails_version'
     ```
-    rails new myapp -m /path/to/template/bootstrap.rb
+3. Simply use the template when you are creating your application
+    ```bash
+    $ rails new myapp -m /path/to/template/bootstrap.rb
     ```
 4. Have fun with your application
 
