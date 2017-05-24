@@ -97,4 +97,4 @@ This Rails application template is open-sourced by [Agilie Team](https://www.agi
 [Sergey Melashych](https://github.com/SergeyMell) <sergey.mell@agilie.com>
 
 ## License
-The [MIT](LICENSE.md) License (MIT) Copyright © 2017 [Agilie Team](https://www.agilie.com)
+The [MIT](LICENSE.MD) License (MIT) Copyright © 2017 [Agilie Team](https://www.agilie.com)
