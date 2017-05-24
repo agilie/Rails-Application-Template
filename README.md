@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/agilie/Rails-Application-Template)
+
 # Rails Application Template
 Base template for creating Ruby-on-Rails applications
 
@@ -88,5 +90,11 @@ The list of statements that will help you to customize your own template are giv
 Problems? Check the [Issues](https://github.com/agilie/Rails-Application-Template/issues) block 
 to find the solution or create an new issue that we will fix asap. Feel free to contribute.
 
+## Author
+This Rails application template is open-sourced by [Agilie Team](https://www.agilie.com) <info@agilie.com>
+
+## Contributor
+[Sergey Melashych](https://github.com/SergeyMell) <sergey.mell@agilie.com>
+
 ## License
-[MIT Licence](http://www.opensource.org/licenses/mit-license)
+The [MIT](LICENSE.md) License (MIT) Copyright © 2017 [Agilie Team](https://www.agilie.com)
